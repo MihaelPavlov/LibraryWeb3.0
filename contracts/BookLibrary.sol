@@ -8,111 +8,81 @@ contract BookLibrary is Owner{
 
     struct Book{
         string name;
-        uint8 copies;
-    }
-    
-    struct History{
-        address user;
-        string action;
-        string book;
+        uint copies;
+        address[] bookBorrowedAdresses;
     }
 
-    address[] private allAddresses;
-    History[] private histories;
-    string[] private namesOfAllBooks;
-    mapping(string => Book) public libraryBooks;
-    mapping(address => string[]) private borrowBooks;
+    bytes32[] public bookKeys;
 
-    // Returns all available books for borrowing (available book when it has more then one copies)
-    function getAllAvailableBooks() public view returns(Book[] memory){
-        Book[] memory _books= new Book[](namesOfAllBooks.length);
+    mapping(bytes32 => Book) public books;
+    mapping(address => mapping(bytes32 => bool)) private borrowedBook;
 
-         for(uint i = 0;  i < namesOfAllBooks.length; i++)
-        {
-            Book memory book = libraryBooks[namesOfAllBooks[i]];
-            
-            if(book.copies > 0){
-             _books[i] = Book(book.name, book.copies);
-            }
-        }
-        
-        return _books;
+    event AddedBook(string _bookName, uint _copies);
+    event BorrowedBook(string _bookName, address _address);
+    event ReturnBook(string _bookName, address _address);
+
+    modifier doesBookExists(string memory _bookName){
+        require(bytes(books[keccak256(abi.encodePacked(_bookName))].name).length != 0 ,"This book doesn't exists");
+        _;
     }
 
-    // History contains information for all taken and returned books
-    function history() public view returns(History[] memory){
-        return histories;
+    modifier isBookValid(string memory _bookName, uint _copies){
+        bytes memory tempBookName = bytes(_bookName);
+        require(tempBookName.length > 0 && _copies > 0, "Book data is not valid");
+        _;
     }
+
+    modifier validateBorrowingBook(string memory _bookName){
+        _;
+    } 
+
 
     // Add new book, if the book is already in the library we are adding only the copies
-    function addBook(Book calldata _book) public isOwner{
-        if(compareTexts(libraryBooks[_book.name].name, _book.name)){
-            libraryBooks[_book.name].copies += _book.copies;
-        }else{
-            libraryBooks[_book.name] =_book;
-            namesOfAllBooks.push(_book.name);
-        }
+    function addBook(string memory _bookName, uint _copies) public isOwner isBookValid(_bookName, _copies){
+        address[] memory emptyAddressList;
+        bytes32 bookNameBytes = bytes32(keccak256(abi.encodePacked(_bookName)));
+
+        // if book is already added just increase the copies
+        books[bookNameBytes] = Book(_bookName,_copies, emptyAddressList);
+        bookKeys.push(bookNameBytes);
+
+        emit AddedBook(_bookName, _copies);
     }
 
     // Borrow book only if it's available
-    function borrowBook(string calldata _bookName) public {
-        require(libraryBooks[_bookName].copies > 0, "At the moment, the library doesn't have copy of this book.");
-        require(!validateBorrowing(_bookName), "This address already borrowed this book.");
-        
-        borrowBooks[msg.sender].push(_bookName);
-        libraryBooks[_bookName].copies--;
+    function borrowBook(string memory _bookName) public doesBookExists(_bookName){
+        bytes32 bookName = bytes32(keccak256(abi.encodePacked(_bookName)));
 
-        histories.push(History(msg.sender, "taken", _bookName));
-        allAddresses.push(msg.sender);
+        require(books[bookName].copies > 0, "At the moment, the library doesn't have copy of this book.");
+        require(borrowedBook[msg.sender][bookName] == false, "This address already borrowed this book.");
+        
+        borrowedBook[msg.sender][bookName] = true;
+        books[bookName].copies--;
+        books[bookName].bookBorrowedAdresses.push(msg.sender);
+
+        emit BorrowedBook(_bookName, msg.sender);
     }
 
     // Return book
-    function returnBook(string calldata _bookName) public {
-        require(validateBorrowing(_bookName),"You don't have this book");
+    // function returnBook(string calldata _bookName) public {
+    //     require(borrowBook[msg.sender][bytes32(_bookName)],"You don't have this book");
 
-        removeBorrowBookByName(_bookName);
-        libraryBooks[_bookName].copies++;
+    //     borrowBook[msg.sender][bytes32(_bookName)] = false;
 
-        histories.push(History(msg.sender, "returned", _bookName));
+    //     removeBorrowBookByName(_bookName);
+    //     libraryBooks[_bookName].copies++;
+
+    //     histories.push(History(msg.sender, "returned", _bookName));
+
+    //     emit ReturnBook(_bookName,msg.sender);
+    // }
+
+    function getNumberOfBooks() public view returns (uint _numberOfBooks){
+        return bookKeys.length;
     }
 
-    function removeBorrowBookByName(string memory _name) private {
-        uint i = findBorrowBookIndex(_name);
-        removeByIndex(i);
+    function GetbookBytes(string memory _bookName) public view returns(uint   ){
+        return bytes(books[keccak256(abi.encodePacked(_bookName))].name).length;
     }
 
-    function findBorrowBookIndex(string memory value) private view returns(uint) {
-        uint i = 0;
-        while ((keccak256(abi.encodePacked((borrowBooks[msg.sender][i])))) != (keccak256(abi.encodePacked((value))))) {
-            i++;
-        }
-        return i;
-    }
-
-    function removeByIndex(uint i) private {
-        // let say we have book [1,2,3,4].
-        // we want to remove number 3 this is index[2]
-        // So we are doing [1,2,4,4] and removing that last number and the array is [1,2,4]
-       borrowBooks[msg.sender][i] = borrowBooks[msg.sender][borrowBooks[msg.sender].length - 1];
-       borrowBooks[msg.sender].pop();
-    }
-
-    function validateBorrowing(string memory _bookName) private view returns(bool){
-
-        for(uint i = 0;  i < borrowBooks[msg.sender].length; i++)
-        {
-                if((keccak256(abi.encodePacked((borrowBooks[msg.sender][i]))) == keccak256(abi.encodePacked((_bookName))))){
-                    return true;
-                }
-        }
-
-        return false;
-    }
-
-    function compareTexts(string memory _text1, string memory _text2) private pure returns(bool){
-        if((keccak256(abi.encodePacked(_text1)) == keccak256(abi.encodePacked(_text2)))){
-            return true;
-        }
-        return false;
-    }
 }
