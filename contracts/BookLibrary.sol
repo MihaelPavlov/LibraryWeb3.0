@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 pragma abicoder v2;
 import "./2_Owner.sol";
+import "./LibraryRegistry.sol";
 
 contract BookLibrary is Owner{
 
@@ -12,14 +13,21 @@ contract BookLibrary is Owner{
         address[] bookBorrowedAdresses;
     }
 
+    address registry;
+
+    function External(address _addr) public {
+        registry = _addr;
+    }
+
     bytes32[] public bookKeys;
 
     mapping(bytes32 => Book) public books;
     mapping(address => mapping(bytes32 => bool)) private borrowedBook;
 
+    event AdjustCopies(string _bookName, uint _copies);
     event AddedBook(string _bookName, uint _copies);
     event BorrowedBook(string _bookName, address _address);
-    event ReturnBook(string _bookName, address _address);
+    event ReturnedBook(string _bookName, address _address);
 
     modifier doesBookExists(string memory _bookName){
         require(bytes(books[keccak256(abi.encodePacked(_bookName))].name).length != 0 ,"This book doesn't exists");
@@ -32,21 +40,21 @@ contract BookLibrary is Owner{
         _;
     }
 
-    modifier validateBorrowingBook(string memory _bookName){
-        _;
-    } 
-
-
     // Add new book, if the book is already in the library we are adding only the copies
     function addBook(string memory _bookName, uint _copies) public isOwner isBookValid(_bookName, _copies){
         address[] memory emptyAddressList;
         bytes32 bookNameBytes = bytes32(keccak256(abi.encodePacked(_bookName)));
 
-        // if book is already added just increase the copies
-        books[bookNameBytes] = Book(_bookName,_copies, emptyAddressList);
-        bookKeys.push(bookNameBytes);
+        if(bytes(books[bookNameBytes].name).length > 0){
+            books[bookNameBytes].copies += _copies;
+            emit AdjustCopies(_bookName,books[bookNameBytes].copies);
+        }
+        else{
+            books[bookNameBytes] = Book(_bookName,_copies, emptyAddressList);
+            bookKeys.push(bookNameBytes);
+            emit AddedBook(_bookName, _copies);
+        }
 
-        emit AddedBook(_bookName, _copies);
     }
 
     // Borrow book only if it's available
@@ -64,19 +72,21 @@ contract BookLibrary is Owner{
     }
 
     // Return book
-    // function returnBook(string calldata _bookName) public {
-    //     require(borrowBook[msg.sender][bytes32(_bookName)],"You don't have this book");
+    function returnBook(string calldata _bookName) public {
+        bytes32 bookName = bytes32(keccak256(abi.encodePacked(_bookName)));
 
-    //     borrowBook[msg.sender][bytes32(_bookName)] = false;
+        require(borrowedBook[msg.sender][bookName],"You don't have this book");
+        
+        borrowedBook[msg.sender][bookName] = false;
+        books[bookName].copies ++;
 
-    //     removeBorrowBookByName(_bookName);
-    //     libraryBooks[_bookName].copies++;
+        emit ReturnedBook(_bookName,msg.sender);
 
-    //     histories.push(History(msg.sender, "returned", _bookName));
+        (bool isOkey,) = registry.delegatecall(abi.encodeWithSelector(LibraryRegistry.readBook.selector,address(this),bookName));
+        require(isOkey,"Something failed");
+    }
 
-    //     emit ReturnBook(_bookName,msg.sender);
-    // }
-
+    // Helpers
     function getNumberOfBooks() public view returns (uint _numberOfBooks){
         return bookKeys.length;
     }
