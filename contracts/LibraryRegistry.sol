@@ -35,7 +35,7 @@ contract LibraryRegistry is Owner{
         require(bytes(registrations[msg.sender].username).length == 0, "You are already registered");
         require(bytes(_username).length >= 3,"Username should be atleast 3 symbols");
 
-        registrations[msg.sender] = Registration(_username,block.timestamp,true, new string[](0));
+        registrations[msg.sender] = Registration(_username,block.timestamp,true, new string[](0)); // is this the correct way to initialize a empty dynamic array
 
         emit RegisteredUser(tx.origin);
     }
