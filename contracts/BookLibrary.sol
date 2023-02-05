@@ -5,6 +5,12 @@ pragma abicoder v2;
 import "./2_Owner.sol";
 import "./LibraryRegistry.sol";
 
+interface ILibraryRegsitry {
+    function register(string memory _username) external payable;
+
+    function readBook(address _contractAddress, string memory _bookName) external;
+}
+
 contract BookLibrary is Owner{
 
     struct Book{
@@ -13,10 +19,10 @@ contract BookLibrary is Owner{
         address[] bookBorrowedAdresses;
     }
 
-    address registry;
+    ILibraryRegsitry public registry; // Can i check if this initialization is null. Is there a null?
 
-    function External(address _addr) public {
-        registry = _addr;
+    function setRegistry(address _addr) public{
+        registry = ILibraryRegsitry(_addr);
     }
 
     bytes32[] public bookKeys;
@@ -39,6 +45,11 @@ contract BookLibrary is Owner{
         require(tempBookName.length > 0 && _copies > 0, "Book data is not valid");
         _;
     }
+
+    // modifier isRegisterdInLibrary(address _addr){
+    //     require(bytes(registry.isRegistered(_addr).username).length > 0,"You are not registered");
+    //     _;
+    // }
 
     // Add new book, if the book is already in the library we are adding only the copies
     function addBook(string memory _bookName, uint _copies) public isOwner isBookValid(_bookName, _copies){
@@ -82,8 +93,13 @@ contract BookLibrary is Owner{
 
         emit ReturnedBook(_bookName,msg.sender);
 
-        (bool isOkey,) = registry.delegatecall(abi.encodeWithSelector(LibraryRegistry.readBook.selector,address(this),bookName));
-        require(isOkey,"Something failed");
+        registry.readBook(address(this), _bookName);
+
+        // Delegetae call is sending the data from the caller 
+        // basically if we call readBook function with delegateCall the msg.sender will be the account address. Else if we use just call the msg.sender will be the contract address
+
+        // (bool isOkey,) = registry.delegatecall(abi.encodeWithSelector(LibraryRegistry.readBook.selector,address(this),bookName));
+        // require(isOkey,"Something failed");
     }
 
     // Helpers
@@ -94,5 +110,4 @@ contract BookLibrary is Owner{
     function GetbookBytes(string memory _bookName) public view returns(uint   ){
         return bytes(books[keccak256(abi.encodePacked(_bookName))].name).length;
     }
-
 }

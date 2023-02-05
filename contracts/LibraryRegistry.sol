@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 pragma abicoder v2;
 import "./2_Owner.sol";
 import "./BookLibrary.sol";
+import "hardhat/console.sol";
 
 contract LibraryRegistry is Owner{
 
@@ -11,12 +12,12 @@ contract LibraryRegistry is Owner{
         string username;
         uint registeredDay;
         bool isTaxPayed;
-        bytes32[] readedBooks; // Collection of all books the the user read/returned.
+        string[] readedBooks; // Collection of all books the the user read/returned.
     }
 
     uint[] private libraryTaxesHistory;
 
-    mapping(address => Registration) internal registrations;
+    mapping(address => Registration) private registrations;
 
     event RegisteredUser(address _address);
     event test(address _address);
@@ -26,25 +27,33 @@ contract LibraryRegistry is Owner{
         libraryTaxesHistory.push(msg.value);
     }
 
+    // function isRegistered(address _addr) public view returns(Registration memory){
+    //     return registrations[_addr];
+    // }
+
     function register(string calldata _username) public payable ValidateTax(msg.value){
         require(bytes(registrations[msg.sender].username).length == 0, "You are already registered");
         require(bytes(_username).length >= 3,"Username should be atleast 3 symbols");
 
-        bytes32[] memory emptyArr;
-        registrations[msg.sender] = Registration(_username,block.timestamp,true, emptyArr);
+        registrations[msg.sender] = Registration(_username,block.timestamp,true, new string[](0));
 
-        emit RegisteredUser(msg.sender);
+        emit RegisteredUser(tx.origin);
     }
 
-    function readBook(address _contractAddress, bytes32 _bookName) external payable{
-        (string memory name,)= BookLibrary(_contractAddress).books(_bookName);
-        require(bytes(name).length != 0,"This book doesn't exists");
+    function readBook(address _contractAddress, string calldata _bookName) external {
 
-        // if we pass msg.sender we are taking the address of the contract not the account address
-        registrations[msg.sender].readedBooks.push(_bookName);
+        // if i use this code here and validate the _bookName , after this when i pushed the _bookname it's isn't there. 
         // read the books from BooksLibrary 
         // check is the book exist
-        emit test(msg.sender);
+
+        // (string memory name,)= BookLibrary(_contractAddress).books(bytes32(keccak256(abi.encodePacked(_bookName))));
+        // require(bytes(name).length != 0,"This book doesn't exists");
+
+        // if we pass msg.sender we are taking the address of the contract not the account address
+
+        registrations[tx.origin].readedBooks.push(_bookName);
+ 
+        emit test(tx.origin);
     } 
 
     function CheckHistory(uint _index) public view isOwner returns(uint){
