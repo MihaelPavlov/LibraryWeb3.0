@@ -1,0 +1,25 @@
+{
+  "name": "libraryweb3.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MihaelPavlov/LibraryWeb3.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MihaelPavlov/LibraryWeb3.0/issues"
+  },
+  "homepage": "https://github.com/MihaelPavlov/LibraryWeb3.0#readme",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.6",
+    "@openzeppelin/contracts": "^4.8.1",
+    "hardhat": "^2.12.7"
+  }
+}

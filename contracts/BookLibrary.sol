@@ -2,9 +2,9 @@
 
 pragma solidity ^0.8.0;
 pragma abicoder v2;
-import "./2_Owner.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract BookLibrary is Owner{
+contract BookLibrary is Ownable{
 
     struct Book{
         string name;
@@ -34,7 +34,7 @@ contract BookLibrary is Owner{
     }
 
     // Add new book, if the book is already in the library we are adding only the copies
-    function addBook(string memory _bookName, uint _copies) public isOwner isBookValid(_bookName, _copies){
+    function addBook(string memory _bookName, uint _copies) public onlyOwner isBookValid(_bookName, _copies){
         address[] memory emptyAddressList;
         bytes32 bookNameBytes = bytes32(keccak256(abi.encodePacked(_bookName)));
 
