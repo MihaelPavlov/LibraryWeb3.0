@@ -1,17 +1,25 @@
-import { HardhatUserConfig, task, subtask } from "hardhat/config";
+import { HardhatUserConfig, task, subtask, types } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-etherscan";
+require('dotenv').config();
 
-const lazyImport = async (module: any) => {
-  return await import(module);
-};
+const { INFURA_URL_GOERLI, INFURA_URL_SEPOLIA, PRIVATE_KEY, ETHERSCAN_KEY } = process.env;
 
+task("verify-etherscan", "Verify deployed contract on Etherscan")
+  .addParam("contractAddress", "Contract address deployed", undefined, types.string)
+  .setAction(async ({ contractAddress }: { contractAddress: string }, hre) => {
+    try {
 
-task("deployToGoerly", "Deploys book library")
-.setAction(async () => {
-   const { main } = await lazyImport("./scripts/deploy-library");
-  
-});
+      await hre.run("verify:verify", {
+        address: contractAddress,
+        contract: 'contracts/BookLibrary.sol:BookLibrary' // <path-to-contract>:<contract-name>
+      });
+
+      await hre.run('print', { message: `Deployed` })
+    } catch ({ message }) {
+      await hre.run('print', { message: `Error: ${message}` })
+    }
+  })
 
 subtask("print", "Prints a message")
   .addParam("message", "The message to print")
@@ -19,23 +27,23 @@ subtask("print", "Prints a message")
     console.log(taskArgs.message);
   });
 
-  const INFURA_URL = "https://goerli.infura.io/v3/31d722098d4e48929c96519ba339b2d0";
-
-  const PRIVATE_KEY = "a61ded91802937b4690567a62077f2cca4cb1342a9be3cd69fd81689ad349c04";
-  
-  const config: HardhatUserConfig = {
-    solidity: "0.8.17",
-    networks: {
-      goerli : { 
-        url: INFURA_URL,
-        accounts: [`0x${PRIVATE_KEY}`],
-       }
-     },
-    etherscan: {
-      // Your API key for Etherscan
-      // Obtain one at <https://etherscan.io/>
-      apiKey: "G4CGACRC745N78HXCWCC4VTXTS9A9HVIXQ "
+const config: HardhatUserConfig = {
+  solidity: "0.8.17",
+  networks: {
+    goerli: {
+      url: INFURA_URL_GOERLI,
+      accounts: [`0x${PRIVATE_KEY}`],
+    },
+    sepolia: {
+      url: INFURA_URL_SEPOLIA,
+      accounts: [`0x${PRIVATE_KEY}`],
     }
-  };
+  },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at <https://etherscan.io/>
+    apiKey: ETHERSCAN_KEY
+  }
+};
 
 export default config;
