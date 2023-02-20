@@ -15,7 +15,7 @@ contract BookLibrary is Ownable{
     bytes32[] public bookKeys;
 
     mapping(bytes32 => Book) public books;
-    mapping(address => mapping(bytes32 => bool)) private borrowedBook;
+    mapping(address => mapping(bytes32 => bool)) public borrowedBook;
 
     event AdjustCopies(string _bookName, uint _copies);
     event AddedBook(string _bookName, uint _copies);
