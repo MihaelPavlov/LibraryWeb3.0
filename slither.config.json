@@ -1,0 +1,9 @@
+{
+    "remixd": {
+        "hostname": "localhost",
+        "port": 65520
+    },
+    "analyze": {
+        "remix": true
+    }
+}

@@ -1,0 +1,1877 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "emptyAddressList",
+            "source_mapping": {
+              "start": 1306,
+              "length": 33,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                38
+              ],
+              "starting_column": 9,
+              "ending_column": 42
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "addBook",
+                "source_mapping": {
+                  "start": 1191,
+                  "length": 632,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "addBook(string,uint256)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "BookLibrary.addBook(string,uint256).emptyAddressList (contracts/BookLibrary.sol#38) is a local variable never initialized\n",
+        "markdown": "[BookLibrary.addBook(string,uint256).emptyAddressList](contracts/BookLibrary.sol#L38) is a local variable never initialized\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L38",
+        "id": "1d21cd90d56a1aacc169ac88195692d0b029fa7dc6cecb553dbf34ccff5be881",
+        "check": "uninitialized-local",
+        "impact": "Medium",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "withdraw",
+            "source_mapping": {
+              "start": 514,
+              "length": 490,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                23,
+                24,
+                25,
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "Lock",
+                "source_mapping": {
+                  "start": 140,
+                  "length": 866,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "withdraw()"
+            }
+          },
+          {
+            "type": "node",
+            "name": "require(bool,string)(block.timestamp >= unlockTime,You can't withdraw yet)",
+            "source_mapping": {
+              "start": 757,
+              "length": 64,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                27
+              ],
+              "starting_column": 9,
+              "ending_column": 73
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "withdraw",
+                "source_mapping": {
+                  "start": 514,
+                  "length": 490,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "Lock",
+                    "source_mapping": {
+                      "start": 140,
+                      "length": 866,
+                      "filename_relative": "contracts/Lock.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                      "filename_short": "contracts/Lock.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "withdraw()"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Lock.withdraw() (contracts/Lock.sol#23-33) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(block.timestamp >= unlockTime,You can't withdraw yet) (contracts/Lock.sol#27)\n",
+        "markdown": "[Lock.withdraw()](contracts/Lock.sol#L23-L33) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- [require(bool,string)(block.timestamp >= unlockTime,You can't withdraw yet)](contracts/Lock.sol#L27)\n",
+        "first_markdown_element": "contracts/Lock.sol#L23-L33",
+        "id": "15e1a76f32b9f88dbeb7c48bd7eb1b6ba1ad2e2e8067747173f93200418be03a",
+        "check": "timestamp",
+        "impact": "Low",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "constructor",
+            "source_mapping": {
+              "start": 270,
+              "length": 238,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "Lock",
+                "source_mapping": {
+                  "start": 140,
+                  "length": 866,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "constructor(uint256)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "require(bool,string)(block.timestamp < _unlockTime,Unlock time should be in the future)",
+            "source_mapping": {
+              "start": 318,
+              "length": 111,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                14,
+                15,
+                16,
+                17
+              ],
+              "starting_column": 9,
+              "ending_column": 10
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "constructor",
+                "source_mapping": {
+                  "start": 270,
+                  "length": 238,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "Lock",
+                    "source_mapping": {
+                      "start": 140,
+                      "length": 866,
+                      "filename_relative": "contracts/Lock.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                      "filename_short": "contracts/Lock.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "constructor(uint256)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Lock.constructor(uint256) (contracts/Lock.sol#13-21) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- require(bool,string)(block.timestamp < _unlockTime,Unlock time should be in the future) (contracts/Lock.sol#14-17)\n",
+        "markdown": "[Lock.constructor(uint256)](contracts/Lock.sol#L13-L21) uses timestamp for comparisons\n\tDangerous comparisons:\n\t- [require(bool,string)(block.timestamp < _unlockTime,Unlock time should be in the future)](contracts/Lock.sol#L14-L17)\n",
+        "first_markdown_element": "contracts/Lock.sol#L13-L21",
+        "id": "cc2b7e93ac8e9b3895e362cc376033162122c1b896b79ef0cab2363d70b4a860",
+        "check": "timestamp",
+        "impact": "Low",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "borrowBook",
+            "source_mapping": {
+              "start": 1874,
+              "length": 593,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "BookLibrary",
+                "source_mapping": {
+                  "start": 144,
+                  "length": 2860,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65,
+                    66,
+                    67,
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77,
+                    78,
+                    79,
+                    80,
+                    81,
+                    82,
+                    83,
+                    84
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 0
+                }
+              },
+              "signature": "borrowBook(string)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "require(bool,string)(borrowedBook[msg.sender][bookName] == false,This address already borrowed this book.)",
+            "source_mapping": {
+              "start": 2149,
+              "length": 96,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                58
+              ],
+              "starting_column": 9,
+              "ending_column": 105
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "borrowBook",
+                "source_mapping": {
+                  "start": 1874,
+                  "length": 593,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "borrowBook(string)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "BookLibrary.borrowBook(string) (contracts/BookLibrary.sol#54-65) compares to a boolean constant:\n\t-require(bool,string)(borrowedBook[msg.sender][bookName] == false,This address already borrowed this book.) (contracts/BookLibrary.sol#58)\n",
+        "markdown": "[BookLibrary.borrowBook(string)](contracts/BookLibrary.sol#L54-L65) compares to a boolean constant:\n\t-[require(bool,string)(borrowedBook[msg.sender][bookName] == false,This address already borrowed this book.)](contracts/BookLibrary.sol#L58)\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L54-L65",
+        "id": "fe2cb166a9ab070a373b6fb910c27a310f4ad8c55c984b76d2d9ce48c01a28b5",
+        "check": "boolean-equal",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 102,
+              "length": 23,
+              "filename_relative": "node_modules/@openzeppelin/contracts/access/Ownable.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol",
+              "filename_short": "node_modules/@openzeppelin/contracts/access/Ownable.sol",
+              "is_dependency": true,
+              "lines": [
+                4
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          },
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 86,
+              "length": 23,
+              "filename_relative": "node_modules/@openzeppelin/contracts/utils/Context.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol",
+              "filename_short": "node_modules/@openzeppelin/contracts/utils/Context.sol",
+              "is_dependency": true,
+              "lines": [
+                4
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          },
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 42,
+              "length": 23,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                3
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          },
+          {
+            "type": "pragma",
+            "name": "^0.8.9",
+            "source_mapping": {
+              "start": 39,
+              "length": 23,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                2
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".9"
+              ]
+            }
+          },
+          {
+            "type": "pragma",
+            "name": "v2",
+            "source_mapping": {
+              "start": 67,
+              "length": 19,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                4
+              ],
+              "starting_column": 1,
+              "ending_column": 20
+            },
+            "type_specific_fields": {
+              "directive": [
+                "abicoder",
+                "v2"
+              ]
+            }
+          }
+        ],
+        "description": "Different versions of Solidity are used:\n\t- Version used: ['^0.8.0', '^0.8.9']\n\t- ^0.8.0 (node_modules/@openzeppelin/contracts/access/Ownable.sol#4)\n\t- ^0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#4)\n\t- ^0.8.0 (contracts/BookLibrary.sol#3)\n\t- ^0.8.9 (contracts/Lock.sol#2)\n\t- v2 (contracts/BookLibrary.sol#4)\n",
+        "markdown": "Different versions of Solidity are used:\n\t- Version used: ['^0.8.0', '^0.8.9']\n\t- [^0.8.0](node_modules/@openzeppelin/contracts/access/Ownable.sol#L4)\n\t- [^0.8.0](node_modules/@openzeppelin/contracts/utils/Context.sol#L4)\n\t- [^0.8.0](contracts/BookLibrary.sol#L3)\n\t- [^0.8.9](contracts/Lock.sol#L2)\n\t- [v2](contracts/BookLibrary.sol#L4)\n",
+        "first_markdown_element": "node_modules/@openzeppelin/contracts/access/Ownable.sol#L4",
+        "id": "ec050cfaf8450156bcc655f61d61ef1d0a8bc5ab73b72dffb926c55ec1628e89",
+        "check": "pragma",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 86,
+              "length": 23,
+              "filename_relative": "node_modules/@openzeppelin/contracts/utils/Context.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\node_modules\\@openzeppelin\\contracts\\utils\\Context.sol",
+              "filename_short": "node_modules/@openzeppelin/contracts/utils/Context.sol",
+              "is_dependency": true,
+              "lines": [
+                4
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          }
+        ],
+        "description": "Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/utils/Context.sol#4) allows old versions\n",
+        "markdown": "Pragma version[^0.8.0](node_modules/@openzeppelin/contracts/utils/Context.sol#L4) allows old versions\n",
+        "first_markdown_element": "node_modules/@openzeppelin/contracts/utils/Context.sol#L4",
+        "id": "21c670e40e414a2f849413afbbdb25adb81dae6585c4f38fc83730c17377e60f",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 42,
+              "length": 23,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                3
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          }
+        ],
+        "description": "Pragma version^0.8.0 (contracts/BookLibrary.sol#3) allows old versions\n",
+        "markdown": "Pragma version[^0.8.0](contracts/BookLibrary.sol#L3) allows old versions\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L3",
+        "id": "48928d5244ad19e9f292886bd2d0a1e98855974f4f6bd07840b2a7a2edf1c105",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.9",
+            "source_mapping": {
+              "start": 39,
+              "length": 23,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                2
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".9"
+              ]
+            }
+          }
+        ],
+        "description": "Pragma version^0.8.9 (contracts/Lock.sol#2) allows old versions\n",
+        "markdown": "Pragma version[^0.8.9](contracts/Lock.sol#L2) allows old versions\n",
+        "first_markdown_element": "contracts/Lock.sol#L2",
+        "id": "4dd2aecca50b16e15508e76eb23e7e6f81b51823ecce3e2f49366d01d36e23c0",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [],
+        "description": "solc-0.8.17 is not recommended for deployment\n",
+        "markdown": "solc-0.8.17 is not recommended for deployment\n",
+        "first_markdown_element": "",
+        "id": "6f3445418a2dcf8fee15470dfb411e2de60b44e21924217d707228c314780c99",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 102,
+              "length": 23,
+              "filename_relative": "node_modules/@openzeppelin/contracts/access/Ownable.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol",
+              "filename_short": "node_modules/@openzeppelin/contracts/access/Ownable.sol",
+              "is_dependency": true,
+              "lines": [
+                4
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          }
+        ],
+        "description": "Pragma version^0.8.0 (node_modules/@openzeppelin/contracts/access/Ownable.sol#4) allows old versions\n",
+        "markdown": "Pragma version[^0.8.0](node_modules/@openzeppelin/contracts/access/Ownable.sol#L4) allows old versions\n",
+        "first_markdown_element": "node_modules/@openzeppelin/contracts/access/Ownable.sol#L4",
+        "id": "d9fcf15f6c48db746fe8b4b5b79cadf5dc4cde499aed490b6b22d0f93b6cdddd",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_bookName",
+            "source_mapping": {
+              "start": 1208,
+              "length": 23,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                37
+              ],
+              "starting_column": 22,
+              "ending_column": 45
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "addBook",
+                "source_mapping": {
+                  "start": 1191,
+                  "length": 632,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "addBook(string,uint256)"
+                }
+              }
+            },
+            "additional_fields": {
+              "target": "parameter",
+              "convention": "mixedCase"
+            }
+          }
+        ],
+        "description": "Parameter BookLibrary.addBook(string,uint256)._bookName (contracts/BookLibrary.sol#37) is not in mixedCase\n",
+        "markdown": "Parameter [BookLibrary.addBook(string,uint256)._bookName](contracts/BookLibrary.sol#L37) is not in mixedCase\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L37",
+        "id": "47e112fc3d2390a9f5856d55ffeb81bc31597ff35eccb8687648151cc6eb4555",
+        "check": "naming-convention",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_bookName",
+            "source_mapping": {
+              "start": 2515,
+              "length": 25,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                68
+              ],
+              "starting_column": 25,
+              "ending_column": 50
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "returnBook",
+                "source_mapping": {
+                  "start": 2495,
+                  "length": 372,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    68,
+                    69,
+                    70,
+                    71,
+                    72,
+                    73,
+                    74,
+                    75,
+                    76,
+                    77
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "returnBook(string)"
+                }
+              }
+            },
+            "additional_fields": {
+              "target": "parameter",
+              "convention": "mixedCase"
+            }
+          }
+        ],
+        "description": "Parameter BookLibrary.returnBook(string)._bookName (contracts/BookLibrary.sol#68) is not in mixedCase\n",
+        "markdown": "Parameter [BookLibrary.returnBook(string)._bookName](contracts/BookLibrary.sol#L68) is not in mixedCase\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L68",
+        "id": "c6b8f36a660f9872508a952a09db087e06f8a64e983c7cc1762967cf42f0a035",
+        "check": "naming-convention",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_copies",
+            "source_mapping": {
+              "start": 1233,
+              "length": 12,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                37
+              ],
+              "starting_column": 47,
+              "ending_column": 59
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "addBook",
+                "source_mapping": {
+                  "start": 1191,
+                  "length": 632,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "addBook(string,uint256)"
+                }
+              }
+            },
+            "additional_fields": {
+              "target": "parameter",
+              "convention": "mixedCase"
+            }
+          }
+        ],
+        "description": "Parameter BookLibrary.addBook(string,uint256)._copies (contracts/BookLibrary.sol#37) is not in mixedCase\n",
+        "markdown": "Parameter [BookLibrary.addBook(string,uint256)._copies](contracts/BookLibrary.sol#L37) is not in mixedCase\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L37",
+        "id": "c7893fe6ccf85832568ecf159b1f672b28915151fd0c280c4181430fe060fac3",
+        "check": "naming-convention",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "_bookName",
+            "source_mapping": {
+              "start": 1894,
+              "length": 23,
+              "filename_relative": "contracts/BookLibrary.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+              "filename_short": "contracts/BookLibrary.sol",
+              "is_dependency": false,
+              "lines": [
+                54
+              ],
+              "starting_column": 25,
+              "ending_column": 48
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "borrowBook",
+                "source_mapping": {
+                  "start": 1874,
+                  "length": 593,
+                  "filename_relative": "contracts/BookLibrary.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                  "filename_short": "contracts/BookLibrary.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62,
+                    63,
+                    64,
+                    65
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "BookLibrary",
+                    "source_mapping": {
+                      "start": 144,
+                      "length": 2860,
+                      "filename_relative": "contracts/BookLibrary.sol",
+                      "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\BookLibrary.sol",
+                      "filename_short": "contracts/BookLibrary.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28,
+                        29,
+                        30,
+                        31,
+                        32,
+                        33,
+                        34,
+                        35,
+                        36,
+                        37,
+                        38,
+                        39,
+                        40,
+                        41,
+                        42,
+                        43,
+                        44,
+                        45,
+                        46,
+                        47,
+                        48,
+                        49,
+                        50,
+                        51,
+                        52,
+                        53,
+                        54,
+                        55,
+                        56,
+                        57,
+                        58,
+                        59,
+                        60,
+                        61,
+                        62,
+                        63,
+                        64,
+                        65,
+                        66,
+                        67,
+                        68,
+                        69,
+                        70,
+                        71,
+                        72,
+                        73,
+                        74,
+                        75,
+                        76,
+                        77,
+                        78,
+                        79,
+                        80,
+                        81,
+                        82,
+                        83,
+                        84
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 0
+                    }
+                  },
+                  "signature": "borrowBook(string)"
+                }
+              }
+            },
+            "additional_fields": {
+              "target": "parameter",
+              "convention": "mixedCase"
+            }
+          }
+        ],
+        "description": "Parameter BookLibrary.borrowBook(string)._bookName (contracts/BookLibrary.sol#54) is not in mixedCase\n",
+        "markdown": "Parameter [BookLibrary.borrowBook(string)._bookName](contracts/BookLibrary.sol#L54) is not in mixedCase\n",
+        "first_markdown_element": "contracts/BookLibrary.sol#L54",
+        "id": "d236d436277d7ebf98a6c1b3eb2cccf71be3217044fbeae81176d2d2b7be62fa",
+        "check": "naming-convention",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "unlockTime",
+            "source_mapping": {
+              "start": 160,
+              "length": 22,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                8
+              ],
+              "starting_column": 5,
+              "ending_column": 27
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "Lock",
+                "source_mapping": {
+                  "start": 140,
+                  "length": 866,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "Lock.unlockTime (contracts/Lock.sol#8) should be immutable \n",
+        "markdown": "[Lock.unlockTime](contracts/Lock.sol#L8) should be immutable \n",
+        "first_markdown_element": "contracts/Lock.sol#L8",
+        "id": "425e273ea9ef371e34ad34ca2faaa3d255b1b5354c7a50319bdc5772ee617fc0",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "variable",
+            "name": "owner",
+            "source_mapping": {
+              "start": 188,
+              "length": 28,
+              "filename_relative": "contracts/Lock.sol",
+              "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+              "filename_short": "contracts/Lock.sol",
+              "is_dependency": false,
+              "lines": [
+                9
+              ],
+              "starting_column": 5,
+              "ending_column": 33
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "Lock",
+                "source_mapping": {
+                  "start": 140,
+                  "length": 866,
+                  "filename_relative": "contracts/Lock.sol",
+                  "filename_absolute": "C:\\Users\\MihaelPavlov\\LibraryWeb3.0\\contracts\\Lock.sol",
+                  "filename_short": "contracts/Lock.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              }
+            }
+          }
+        ],
+        "description": "Lock.owner (contracts/Lock.sol#9) should be immutable \n",
+        "markdown": "[Lock.owner](contracts/Lock.sol#L9) should be immutable \n",
+        "first_markdown_element": "contracts/Lock.sol#L9",
+        "id": "d63681d9d4c37738400555948047c67e22b0d15704f0671b96349c25c7e4fe81",
+        "check": "immutable-states",
+        "impact": "Optimization",
+        "confidence": "High"
+      }
+    ]
+  }
+}
